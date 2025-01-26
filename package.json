@@ -9,18 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@oyl/sdk": "https://github.com/Oyl-Wallet/oyl-sdk#image-support",
+    "@tanstack/react-query": "^5.64.2",
+    "@types/bitcoinjs-lib": "^5.0.0",
+    "@types/d3": "^7.4.3",
+    "bitcoinjs-lib": "^7.0.0-rc.0",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.0.5",
+    "fs": "^0.0.1-security",
+    "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@types/node": "^22.5.4",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3"
+    "typescript": "^5"
   }
 }

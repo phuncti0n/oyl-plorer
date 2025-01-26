@@ -1,101 +1,65 @@
-import Image from "next/image";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
+import Link from "next/link";
+import GalleryPreview from "./components/GalleryPreview";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-between space-y-6 p-6">
+      {/* Intro Section */}
+      <div className="mx-auto max-w-2xl space-y-10">
+        {/* todo: wrap in motion */}
+        <Intro />
+        <div>
+          <Link
+            href="/explore"
+            className="mt-8 flex justify-center text-neutral-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            or explore all
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Gallery Section */}
+      <div className="w-full">
+        <p className="mt-20 text-center text-sm uppercase">Latest Alkanes</p>
+        <div className="mx-auto mb-4 mt-3 h-12 w-0 border border-dashed border-l-black" />
+        <GalleryPreview />
+      </div>
+
+      <div className="w-full py-8">
+        <hr className="border-dashed border-neutral-200" />
+      </div>
+
+      <div className="grid w-full gap-5 md:grid-cols-2">
+        <div className="rounded-[6px] border border-neutral-0 p-8">
+          <div className="flex h-16 w-16 items-center overflow-hidden rounded bg-neutral-0 pl-2 text-xl">
+            <span className="pointer-events-none select-none bg-gradient-to-r from-neutral-300 to-neutral-0 bg-clip-text text-transparent">
+              #8030
+            </span>
+          </div>
+        </div>
+        <div className="rounded-[6px] border border-neutral-0 p-8">
+          <div className="pointer-events-none flex h-16 w-16 items-center justify-center rounded bg-neutral-0">
+            <img src="/b-illustration.svg" alt="Bitcoin Icon" />
+          </div>
+          <h4 className="mt-7 text-2xl">What are Alkanes?</h4>
+          <p className="mt-4">
+            Alkanes implements a full smart contract environment on Bitcoin L1.
+            Alkanes smart contracts are developed in Rust, compiled to
+            WebAssembly (WASM), and are deployed as gzipped WASM files through
+            witness reveal payloads, similar to ordinals inscriptions.{" "}
+            <a
+              href="https://www.hiro.so/blog/what-are-bitcoin-ordinals "
+              target="_blank"
+              className="text-neutral-300"
+            >
+              Learn more.
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
   );
 }

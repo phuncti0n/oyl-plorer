@@ -3,19 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gradient-1: linear-gradient(180deg, #f7fafc 0%, #f4eaea 51%, #d1d9e3 100%);
+  --gradient-2: linear-gradient(
+    180deg,
+    #f7fafc 0%,
+    #f2f2eb 80.7%,
+    #fff3d5 100%
+  );
+  --gradient-3: linear-gradient(
+    180deg,
+    #f7fafc 0%,
+    #dbe2e8 44.66%,
+    #c5cfd3 70.5%,
+    #e1d3c8 88%,
+    #fee6db 100%
+  );
+  --gradient-4: linear-gradient(
+    180deg,
+    #f7fafc 0%,
+    #edeee9 44.66%,
+    #e1e2dd 100%
+  );
+  --gradient-5: linear-gradient(180deg, #f7fafc 0%, #f5ecf7 51%, #ffebdf 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: "Inter"; /* Name of your custom font */
+  src: url("/assets/fonts/InterVariable-Regular.woff2") format("woff2"),
+    url("/assets/fonts/InterVariable-Medium.woff2") format("woff2");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist"; /* Name of your custom font */
+  src: url("/assets/fonts/GeistMono-Medium.woff2") format("woff2"),
+    url("/assets/fonts/GeistMono-Regular.woff2") format("woff2");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+[type="input"]:focus-visible {
+  @apply focus:ring-0 focus:ring-offset-0;
+}
+
+@layer base {
+  html {
+    @apply font-mono;
+    background-color: var(--gradient-1);
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
