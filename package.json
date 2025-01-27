@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@oyl/sdk": "https://github.com/Oyl-Wallet/oyl-sdk#image-support",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-tooltip": "^1.1.7",
     "@tanstack/react-query": "^5.64.2",
     "@types/bitcoinjs-lib": "^5.0.0",
     "@types/d3": "^7.4.3",
@@ -22,6 +24,8 @@
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-hot-toast": "^2.5.1",
+    "react-use": "^17.6.0",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {

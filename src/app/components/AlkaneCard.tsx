@@ -32,7 +32,7 @@ const AlkaneCard = ({
 
   return (
     <Link
-      href={`/alkane/${alkane.id.block + ":" + alkane.id.tx}`}
+      href={`/alkane/${alkane.id.block + "_" + alkane.id.tx}`}
       className="space-y-2 rounded-md border sm:p-2 md:space-y-3 md:p-3 lg:space-y-5 lg:p-5"
     >
       <div className="aspect-square w-full overflow-hidden rounded-[4px]">

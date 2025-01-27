@@ -294,3 +294,10 @@ export const getProtorunesForOutpoint = async ({
   console.log(response);
   return response.result;
 };
+
+export const formatDateTime = (timestamp: number) => {
+  return new Intl.DateTimeFormat("default", {
+    dateStyle: "long",
+    timeStyle: "medium",
+  }).format(new Date(timestamp));
+};
