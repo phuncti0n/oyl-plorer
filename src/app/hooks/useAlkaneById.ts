@@ -15,4 +15,3 @@ export const useAlkaneByIdQuery = (block: string, tx: string) => {
     staleTime: 1000 * 60 * 5, // Optional: Keep data fresh for 5 minutes
   });
 };
-``;

@@ -15,4 +15,3 @@ export const useGetHistory = (block: string, tx: string) => {
     enabled: !!block && !!tx,
   });
 };
-``;
