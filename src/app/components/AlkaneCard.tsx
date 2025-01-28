@@ -16,8 +16,8 @@ const AlkaneCard = ({
     return (
       // make the grid take up the maximal space, even when a grid item is empty
       // todo: double-check skeleton styles are the same as the real ones
-      <div className="space-y-2 rounded-md border sm:p-2 md:space-y-3 md:p-3 lg:space-y-5 lg:p-5">
-        <div className="aspect-square rounded-[4px]" />
+      <div className="space-y-2 md:space-y-3 md:p-3 lg:space-y-5 lg:p-5">
+        <div className="rounded-[4px]" />
         <div
           className={cn(
             "hidden rounded-[4px] px-1 text-sm opacity-0 sm:inline-block md:px-2 md:py-1",
@@ -31,28 +31,12 @@ const AlkaneCard = ({
     );
 
   return (
-    <Link
-      href={`/alkane/${alkane.id.block + "_" + alkane.id.tx}`}
-      className="space-y-2 rounded-md border sm:p-2 md:space-y-3 md:p-3 lg:space-y-5 lg:p-5"
-    >
-      <div className="aspect-square w-full overflow-hidden rounded-[4px]">
-        <AlkaneRender
-          alkane={alkane}
-          className="pointer-events-none sm:pointer-events-auto"
-        />
-      </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className={cn(
-          "hidden rounded-[4px] bg-black px-1 text-sm text-white sm:inline-block md:px-2 md:py-1",
-          light && "border bg-white text-neutral-300"
-        )}
-      >
-        #{alkane.id.block + ":" + alkane.id.tx}
-      </motion.div>
-    </Link>
+    <div className="w-full overflow-hidden rounded-[4px] space-y-2 p-2">
+      <AlkaneRender
+        alkane={alkane}
+        className="pointer-events-none sm:pointer-events-auto"
+      />
+    </div>
   );
 };
 

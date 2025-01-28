@@ -7,8 +7,6 @@ import AlkaneCard from "./AlkaneCard";
 const GalleryPreview = () => {
   const { data, error, isLoading } = useAlkanesQuery(5);
 
-  console.log(data, error, isLoading);
-
   useEffect(() => {
     if (data?.length) {
     }
@@ -20,7 +18,7 @@ const GalleryPreview = () => {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
+      <div className="flex flex-col rounded-md border sm:p-2 ">
         {previews.slice(0, 12).map((i, index) => (
           <AlkaneCard key={index} alkane={i} />
         ))}
