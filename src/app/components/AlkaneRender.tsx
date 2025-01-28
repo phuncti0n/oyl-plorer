@@ -44,7 +44,7 @@ const AlkaneRender = (props: { alkane: Alkane; className?: string }) => {
 
     setIsLoading(true);
 
-    const addresses = await window.oyl?.getAddresses();
+    const addresses = await (window as any).oyl?.getAddresses();
 
     const calldata = [
       BigInt(props.alkane.id.block),
@@ -102,7 +102,7 @@ const AlkaneRender = (props: { alkane: Alkane; className?: string }) => {
     });
 
     console.log(
-      await window.oyl.signPsbt({
+      await (window as any).oyl.signPsbt({
         psbt: psbtHex,
         finalize: true,
         broadcast: true,

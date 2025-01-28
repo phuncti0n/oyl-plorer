@@ -16,9 +16,9 @@ export function ConnectWalletButton() {
   }, []);
 
   const checkConnection = async () => {
-    if (typeof window.oyl !== "undefined") {
+    if (typeof (window as any).oyl !== "undefined") {
       try {
-        const addresses = await window.oyl.getAddresses();
+        const addresses = await (window as any).oyl.getAddresses();
         setIsConnected(true);
         setWalletAddress(addresses.taproot.address);
       } catch (error) {
@@ -28,9 +28,9 @@ export function ConnectWalletButton() {
   };
 
   const connectWallet = async () => {
-    if (typeof window.oyl !== "undefined") {
+    if (typeof (window as any).oyl !== "undefined") {
       try {
-        const addresses = await window.oyl.getAddresses();
+        const addresses = await (window as any).oyl.getAddresses();
         setIsConnected(true);
         setWalletAddress(addresses.taproot.address);
       } catch (error) {
