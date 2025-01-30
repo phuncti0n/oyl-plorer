@@ -492,9 +492,9 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@oyl/sdk@https://github.com/Oyl-Wallet/oyl-sdk#image-support":
+"@oyl/sdk@https://github.com/Oyl-Wallet/oyl-sdk#alkane-filter":
   version "1.13.0"
-  resolved "https://github.com/Oyl-Wallet/oyl-sdk#da6c7dde7f40db9ef9b119eb7722c21cb0463ac4"
+  resolved "https://github.com/Oyl-Wallet/oyl-sdk#48571f4fed3da6bb26879c3b731be36f045255d0"
   dependencies:
     "@bitcoinerlab/secp256k1" "1.0.2"
     "@magiceden-oss/runestone-lib" "1.0.2"

@@ -5,7 +5,7 @@ import { useAlkanesQuery } from "../hooks/useAlkanes";
 import AlkaneCard from "./AlkaneCard";
 
 const GalleryPreview = () => {
-  const { data, error, isLoading } = useAlkanesQuery(5);
+  const { data, error, isLoading } = useAlkanesQuery(15);
 
   useEffect(() => {
     if (data?.length) {
@@ -14,7 +14,7 @@ const GalleryPreview = () => {
 
   if (error) return <span>Something went wrong ʕ•̠͡•ʔ</span>;
 
-  const previews = data ? data : Array(12).fill(null); // skeleton values
+  const previews = data ? data : Array(12).fill(null);
 
   return (
     <>

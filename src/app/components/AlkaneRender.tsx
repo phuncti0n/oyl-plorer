@@ -7,27 +7,28 @@ import { provider } from "../constants";
 
 const AlkaneRender = (props: { alkane: Alkane; className?: string }) => {
   const [isLoading, setIsLoading] = useState(false);
-  // if (props.alkane?.data) {
-  //   const hexToBase64 = (hex: string): string => {
-  //     const bytes = new Uint8Array(
-  //       hex.match(/.{1,2}/g)?.map((byte) => parseInt(byte, 16)) || []
-  //     );
-  //     return btoa(String.fromCharCode.apply(null, Array.from(bytes)));
-  //   };
 
-  //   // Create data URL from base64
-  //   const base64 = hexToBase64(props.alkane.data.slice(2));
-  //   const dataUrl = `data:image/png;base64,${base64}`;
-  //   return (
-  //     <div
-  //       className={
-  //         "relative  items-center aspect-square w-full justify-center overflow-hidden bg-[#F2F0ED] p-3"
-  //       }
-  //     >
-  //       <img src={dataUrl} />
-  //     </div>
-  //   );
-  // }
+  const RenderImage = () => {
+    const hexToBase64 = (hex: string): string => {
+      const bytes = new Uint8Array(
+        hex.match(/.{1,2}/g)?.map((byte) => parseInt(byte, 16)) || []
+      );
+      return btoa(String.fromCharCode.apply(null, Array.from(bytes)));
+    };
+
+    // Create data URL from base64
+    const base64 = hexToBase64(props.alkane.data!.slice(2));
+    const dataUrl = `data:image/png;base64,${base64}`;
+    return (
+      <div
+        className={
+          "relative  items-center aspect-square w-full justify-center overflow-hidden bg-[#F2F0ED] p-3"
+        }
+      >
+        <img src={dataUrl} />
+      </div>
+    );
+  };
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) {
@@ -117,6 +118,11 @@ const AlkaneRender = (props: { alkane: Alkane; className?: string }) => {
   return (
     <div className="relative flex flex-row items-center w-full overflow-hidden bg-[#F2F0ED] p-2">
       <div className="grid grid-cols-7 w-full items-center">
+        {props.alkane.data && (
+          <>
+            <RenderImage />
+          </>
+        )}
         {/* Symbol */}
         <div className="text-left">
           <span className="text-gray-500 mr-1">Symbol:</span>
