@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { cn } from "../utils";
 
 import { Alkane } from "../types";
@@ -31,7 +29,7 @@ const AlkaneCard = ({
     );
 
   return (
-    <div className="w-full overflow-hidden rounded-[4px] space-y-2 p-2">
+    <div className="w-full rounded-[4px] space-y-2 p-2">
       <AlkaneRender
         alkane={alkane}
         className="pointer-events-none sm:pointer-events-auto"

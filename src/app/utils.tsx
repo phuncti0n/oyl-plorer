@@ -291,7 +291,6 @@ export const getProtorunesForOutpoint = async ({
       },
     })
   ).json();
-  console.log(response);
   return response.result;
 };
 

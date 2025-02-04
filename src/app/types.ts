@@ -5,6 +5,7 @@ export interface Alkane {
   symbol: string;
   percentageMinted: number;
   minted: number;
+  cap: number;
   totalSupply: number;
   data?: string;
 }
