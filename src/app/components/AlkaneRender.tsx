@@ -1,5 +1,4 @@
 import { Alkane } from "../types";
-import Link from "next/link";
 import { Account, alkanes, networks, utxo } from "@oyl/sdk";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -124,17 +123,28 @@ const AlkaneRender = (props: { alkane: Alkane; className?: string }) => {
       provider,
     });
 
-    console.log(
-      await (window as any).oyl.signPsbt({
+    toast.promise(
+      (window as any).oyl.signPsbt({
         psbt: psbtHex,
         finalize: true,
         broadcast: true,
-      })
+      }),
+      {
+        loading: "Initializing...",
+        success: (data: { txid: string }) => (
+          <a
+            target="_"
+            className="underline truncate block max-w-[300px]"
+            href={"https://mempool.space/tx/" + data.txid}
+          >
+            {data.txid}
+          </a>
+        ),
+        error: "Error broadcasting txn",
+      }
     );
 
     setIsLoading(false);
-
-    toast.success("Transaction broadcasted!");
   };
 
   return (
